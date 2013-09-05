@@ -1,0 +1,20 @@
+<div data-role="view" id="share" data-layout="default" data-transition="overlay:down" class="share-view"
+    data-init="app.viewModels.addActivity.init" data-show="app.viewModels.addActivity.show" data-model="app.viewModels.addActivity">
+    <header data-role="header">
+        <div data-role="navbar">
+            Activity
+            <a class="nav-button" data-align="left" data-role="backbutton">Cancel</a>
+            <a class="nav-button" data-align="right" data-role="button" data-bind="click: saveActivity">Post</a>
+        </div>
+    </header>
+    <div id="enterStatus" class="share-form-wrp">
+        <div class="user-info">
+            <img data-bind="attr:{src: me.get('data').PictureUrl}" alt="styles/images/avatar.png" />
+            <h2 data-bind="text: me.get('data').DisplayName">Me</h2>
+        </div>
+        <div class="user-share">
+            <textarea id="newStatus" placeholder="What's on your mind?" required validationMessage="Comment text is required!"></textarea>
+            <div id="newCommentValidation" class="validation">Comment text is required!</div>
+        </div>
+    </div>
+</div>
