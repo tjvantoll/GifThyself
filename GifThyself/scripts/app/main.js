@@ -50,7 +50,9 @@
     
     $('#getPicture').on('click', function() {
         navigator.camera.getPicture(function(data) {
-            var image = $('<img class="thumbnail">');
+            // TODO: Render the image rotated.
+            // https://github.com/stomita/ios-imagefile-megapixel/blob/master/test/megapix-image.test.js
+            var image = $('<img>');
 			image.attr('src', 'data:image/jpeg;base64,' + data);
             $('#images').append(image);
         }, function(message) {
