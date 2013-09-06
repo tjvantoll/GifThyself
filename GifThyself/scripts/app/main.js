@@ -51,10 +51,6 @@
     $('#getPicture').on('click', function() {
         navigator.camera.getPicture(function(data) {
             var image = $('<img class="thumbnail">');
-            image.on('load', function() {
-                console.log(this);
-                //context.drawImage(this, 0, 0);
-            });
 			image.attr('src', 'data:image/jpeg;base64,' + data);
             $('#images').append(image);
         }, function(message) {
@@ -76,8 +72,11 @@
         
         // Add images     
         $('#images img').each(function() {
-            var proportionalHeight = this.height * (200 / this.width);
-            context.drawImage(this, 0, 0, 200, proportionalHeight);
+			var mpImg = new MegaPixImage(this);
+            mpImg.render(canvas, { maxWidth: 200, maxHeight: 200, orientation: 6 });
+            
+//            var proportionalHeight = this.height * (200 / this.width);
+//            context.drawImage(this, 0, 0, 200, proportionalHeight);
             encoder.addFrame(context);
         });
 
