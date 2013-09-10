@@ -8,29 +8,50 @@
         <link href="styles/main.css" rel="stylesheet" />
     </head>
     <body>
-        <div data-role="view" id="welcome" data-layout="default">
-			<button id="getPicture">
-                Get Picture
+        <div data-role="layout" data-id="main-layout">
+
+        </div>
+
+        <div data-role="view" id="welcome" data-layout="main-layout">
+            <p>
+                To create an animated gif, first take the pictures you would like to be included.
+            </p>
+			<button data-role="button" id="getPicture">
+                Add Picture
             </button>
             <div id="images">
             </div>
-            <button id="buildGif">
-                Build GIF
+            
+            <p>
+                When you're happy with the pictures, use the button below to generate the gif.
+            </p>
+            <button id="buildGif" class="primary" data-role="button">
+                Build Gif
             </button>
+
             <canvas id="canvas" height="200" width="200"></canvas>
         </div>
         
+        <!-- http://cordova.apache.org/docs/en/2.7.0/cordova_camera_camera.md.html#Camera -->
         <script src="cordova.js"></script>
 
+        <!-- https://github.com/antimatter15/jsgif -->
+        <!-- http://workshop.rs/2013/07/use-webcam-to-create-animated-gif/ -->
         <script src="scripts/lib/gif/LZWEncoder.js"></script>
         <script src="scripts/lib/gif/NeuQuant.js"></script>
         <script src="scripts/lib/gif/GIFEncoder.js"></script>
         <script src="scripts/lib/gif/b64.js"></script>
+        
+        <!-- http://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios -->
         <script src="scripts/lib/megapix-image.js"></script>
         
         <script src="kendo/js/jquery.min.js"></script>
         <script src="kendo/js/kendo.mobile.min.js"></script>
+        
+        <!-- https://www.everlive.com/AllApps/ManageApp/CodeReference?moduleId=d1752fd0-1636-11e3-8518-fb84816882a2#navigationPlaceholder-Documentation-nav-JavaScript-SDK -->
         <script src="scripts/lib/everlive.all.min.js"></script>
+
+		<!-- ??? -->
         <script src="scripts/app/identity-provider.js"></script>
 
         <script src="scripts/app/main.js" type="text/javascript"></script>
