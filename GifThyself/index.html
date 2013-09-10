@@ -12,7 +12,7 @@
 
         </div>
 
-        <div data-role="view" id="welcome" data-layout="main-layout">
+        <div data-role="view" id="build" data-layout="main-layout">
             <p>
                 To create an animated gif, first take the pictures you would like to be included.
             </p>
@@ -28,8 +28,19 @@
             <button id="buildGif" class="primary" data-role="button">
                 Build Gif
             </button>
-
-            <canvas id="canvas" height="200" width="200"></canvas>
+        </div>
+        
+        <div data-role="view" id="preview" data-layout="main-layout">
+            <p>
+                Your gif has been built! Share it, save it, or head back to alter it.
+            </p>
+            <div id="result"></div>
+            <button class="primary" data-role="button">
+                Share
+            </button>
+            <a href="#build" data-role="button">
+				Cancel
+            </a>
         </div>
         
         <!-- http://cordova.apache.org/docs/en/2.7.0/cordova_camera_camera.md.html#Camera -->

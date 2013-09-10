@@ -23,9 +23,10 @@ p {
     margin-right: 1rem;
 	margin: 1em 1rem 0 1rem;
 }
-#images img {
-    max-height: 100px;
+#images canvas {
     max-width: 100px;
+    max-height: 100px;
 }
-
-canvas { display: none; }
+#images img {
+    display: none;
+}
