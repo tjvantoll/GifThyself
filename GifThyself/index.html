@@ -16,7 +16,7 @@
             <p>
                 To create an animated gif, first take the pictures you would like to be included.
             </p>
-			<button data-role="button" id="getPicture">
+			<button data-role="button" id="getPicture" data-icon="camera">
                 Add Picture
             </button>
             <div id="images">
@@ -31,16 +31,18 @@
         </div>
         
         <div data-role="view" id="preview" data-layout="main-layout">
-            <p>
-                Your gif has been built! Share it, save it, or head back to alter it.
-            </p>
-            <div id="result"></div>
-            <button class="primary" data-role="button">
-                Share
-            </button>
-            <a href="#build" data-role="button">
-				Cancel
-            </a>
+            <div id="preview-container">
+                <p>
+                    Your gif has been built! Share it, save it, or head back to alter it.
+                </p>
+                <div id="result"></div>
+                <button class="primary" data-role="button">
+                    Share
+                </button>
+                <a href="#build" data-role="button">
+                    Cancel
+                </a>
+	        </div>
         </div>
         
         <!-- http://cordova.apache.org/docs/en/2.7.0/cordova_camera_camera.md.html#Camera -->

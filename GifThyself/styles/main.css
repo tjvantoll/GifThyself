@@ -17,11 +17,30 @@ p {
 }
 
 #images {
-    border: 1px solid black;
-    height: 100px;
+    border: 1px dotted black;
+    min-height: 100px;
     margin-left: 1rem;
     margin-right: 1rem;
 	margin: 1em 1rem 0 1rem;
+}
+#images > div {
+    position: relative;
+    display: inline-block;
+    margin: 0.3em;
+}
+#images button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 25px;
+    height: 25px;
+    background: red;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    font-family: Verdana;
+    font-weight: bold;
 }
 #images canvas {
     max-width: 100px;
@@ -30,3 +49,19 @@ p {
 #images img {
     display: none;
 }
+
+#preview-container {
+    opacity: 1;
+    -webkit-transition: opacity 1s;
+}
+#preview-container.loading {
+    opacity: 0;
+    -webkit-transition: opacity 0s;
+}
+
+#result {
+    width: 200px;
+    text-align: center;
+    margin: 1em auto;
+}
+a[href="#build"] { margin-top: 0.5em; }
