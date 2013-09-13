@@ -41,6 +41,28 @@
     /******************************************************************/
     
     (function() {
+        function generateQuickGuid() {
+            return Math.random().toString(36).substring(2, 15) +
+                Math.random().toString(36).substring(2, 15);
+        };
+        
+        function uploadGif(data) {
+            var file = {
+                Filename: generateQuickGuid() + '.gif',
+                ContentType: 'image/gif',
+                base64: data
+            };
+            el.Files.create(file,
+                function(data) {
+                    alert('ok ' + JSON.stringify(data));
+                    console.log(data.Result.Uri);
+                },
+                function(error) {
+                    alert('fail ' + JSON.stringify(data));                            
+                }
+            );
+        };
+        
         function renderImageInCanvas(image, canvas) {
             var mpImg = new MegaPixImage(image),
                 canvas = canvas || document.createElement('canvas');
