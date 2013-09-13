@@ -135,6 +135,10 @@
             $(this).parents('div').first().remove();
         };
         
+        function closeConfirmationDialog() {
+            $('#confirmation').kendoMobileModalView('close');
+        };
+        
         $('#getPicture').on('click', getPicture);
         $('#images').on('click', 'button', removeImage);
         $('#buildGif').on('click', function() {
@@ -146,7 +150,9 @@
                 setTimeout(buildGif, 3000);   
             }
         });
+        $(document).on('click', '.confirmation-cancel', closeConfirmationDialog);
         $('#shareGif').on('click', function() {
+            closeConfirmationDialog();
 			app.navigate('#share');
             $(app.pane.loader.element).find('h1').text('Uploading...');
             app.showLoading();

@@ -40,10 +40,30 @@
                 <a href="#build" data-role="button">
                     Make Changes
                 </a>
-                <button id="shareGif" class="primary" data-role="button">
+                <a href="#confirmation" class="primary" data-role="button" data-rel="modalview">
                     Share
-                </button>
+                </a>
 	        </div>
+        </div>
+        
+        <div data-role="modalview" id="confirmation">
+            <div data-role="header">
+                <div data-role="navbar">
+                    <span>Confirmation</span>
+                    <a data-role="button" data-align="right" class="confirmation-cancel">Cancel</a>
+                </div>
+            </div>
+            <div>
+                <p>
+                    Sharing will upload your gif to a publicly accessible URL where it can then be shared to a service of your choosing. Cool with that?
+                </p>
+                <button data-role="button" class="confirmation-cancel">
+                    Uh... no.
+                </button>
+                <button id="shareGif" data-role="button" class="primary">
+                    Yeah, let's do this!
+                </button>
+            </div>
         </div>
         
         <div data-role="view" id="share" data-layout="main-layout">

@@ -1,12 +1,8 @@
-*, *:before, *:after {
-	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-}
-
 p {
     margin-left: 0;
     margin-right: 0;
 }
-.km-button {
+.km-button:not([data-align="right"]) {
     font-size: 1.5em;
     width: 90%;
     margin-left: 1rem;
@@ -59,12 +55,16 @@ p {
     -webkit-transition: opacity 0s;
 }
 
+#confirmation {
+    min-height: 20em;
+    width: 95%;
+}
+
 #result {
     width: 200px;
     text-align: center;
     margin: 1em auto;
 }
-a[href="#build"], #shareGif {
+a[href="#build"], a[href="#confirmation"], #shareGif {
     margin-top: 0.5em;
-    font-weight: normal;
 }
