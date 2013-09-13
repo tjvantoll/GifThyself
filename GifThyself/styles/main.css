@@ -64,4 +64,7 @@ p {
     text-align: center;
     margin: 1em auto;
 }
-a[href="#build"] { margin-top: 0.5em; }
+a[href="#build"], #shareGif {
+    margin-top: 0.5em;
+    font-weight: normal;
+}

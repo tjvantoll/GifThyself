@@ -51,19 +51,22 @@
         };
         
         function uploadGif() {
-            var file = {
-                Filename: generateQuickGuid() + '.gif',
-                ContentType: 'image/gif',
-                base64: base64EncodedGif
-            };
+            var deferred = $.Deferred(),
+                file = {
+                	Filename: generateQuickGuid() + '.gif',
+	                ContentType: 'image/gif',
+	                base64: base64EncodedGif
+	            };
             el.Files.create(file,
                 function(data) {
-                    console.log(data);
+                    deferred.resolve(data);
                 },
                 function(error) {
-                    alert('Image upload failed ' + JSON.stringify(data));                            
+                    alert('Image upload failed.');
+                    deferred.reject(error);
                 }
             );
+            return deferred;
         };
         
         function renderImageInCanvas(image, canvas) {
@@ -147,7 +150,15 @@
 			app.navigate('#share');
             $(app.pane.loader.element).find('h1').text('Uploading...');
             app.showLoading();
-            setTimeout(uploadGif, 3000);
+            setTimeout(function() {
+                uploadGif().then(function(data) {
+                    $('#share-results-container').html(
+                    	'<p>Your image was uploaded successfully!</p>' +
+                        '<a href="' + data.result.Uri + '">View Online</a>'
+                    );
+					app.hideLoading();
+                }); 
+            }, 3000);
         });
     }());
 }());
