@@ -24,7 +24,7 @@
             </div>
             
             <p>
-                When you're happy with the pictures, use the button below to generate the gif.
+                When you're happy, use the button below to generate a gif.
             </p>
             <button id="buildGif" class="primary" data-role="button">
                 Build Gif
@@ -68,7 +68,14 @@
         
         <div data-role="view" id="share" data-layout="main-layout">
             <div id="share-results-container">
-                
+				<p>Your image was uploaded successfully!</p>
+				<p>
+                    Here's a copyable URL you can use to share your image.
+                    <input value="' + url + '">
+	                <a href="">View Online</a>
+                </p>
+				
+                <a href="#build" id="build-another" data-role="button" class="primary">Build Another</a>
             </div>
         </div>
         

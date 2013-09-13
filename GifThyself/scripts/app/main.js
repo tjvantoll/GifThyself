@@ -139,8 +139,10 @@
             $('#confirmation').kendoMobileModalView('close');
         };
         
-        $('#getPicture').on('click', getPicture);
-        $('#images').on('click', 'button', removeImage);
+        function resetApp() {
+            $('#images').empty();
+        };
+        
         $('#buildGif').on('click', function() {
             if (checkForImages()) {
                 app.navigate('#preview');
@@ -150,22 +152,28 @@
                 setTimeout(buildGif, 3000);   
             }
         });
-        $(document).on('click', '.confirmation-cancel', closeConfirmationDialog);
         $('#shareGif').on('click', function() {
             closeConfirmationDialog();
 			app.navigate('#share');
             $(app.pane.loader.element).find('h1').text('Uploading...');
+            var container = $('#share-results-container').addClass('loading');
             app.showLoading();
             setTimeout(function() {
                 uploadGif().then(function(data) {
-                    $('#share-results-container').html(
-                    	'<p>Your image was uploaded successfully!</p>' +
-                        '<a href="' + data.result.Uri + '">View Online</a>'
-                    );
+                    var url = data.result.Uri;
+                    container.find('input').val(url);
+                    container.find('p a').attr('href', url);
 					app.hideLoading();
+                    container.removeClass('loading');
                 }); 
             }, 3000);
         });
+        
+        $(document)
+	        .on('click', '#getPicture', getPicture)
+    	    .on('click', '#images button', removeImage)
+        	.on('click', '.confirmation-cancel', closeConfirmationDialog)
+        	.on('click', '#build-another', resetApp);
     }());
 }());
 

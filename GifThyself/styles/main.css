@@ -46,11 +46,11 @@ p {
     display: none;
 }
 
-#preview-container {
+#preview-container, #share-results-container {
     opacity: 1;
     -webkit-transition: opacity 1s;
 }
-#preview-container.loading {
+#preview-container.loading, #share-results-container.loading {
     opacity: 0;
     -webkit-transition: opacity 0s;
 }
@@ -67,4 +67,13 @@ p {
 }
 a[href="#build"], a[href="#confirmation"], #shareGif {
     margin-top: 0.5em;
+}
+
+input {
+    display: block;
+    width: 100%;
+    margin: 1em 0;
+    height: 30px;
+    font-size: 1.1em;
+    border-radius: 5px;
 }
