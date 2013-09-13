@@ -55,7 +55,7 @@
             el.Files.create(file,
                 function(data) {
                     alert('ok ' + JSON.stringify(data));
-                    console.log(data.Result.Uri);
+                    console.log(data);
                 },
                 function(error) {
                     alert('fail ' + JSON.stringify(data));                            
@@ -108,7 +108,7 @@
             var binaryGif = encoder.stream().getData(),
                 dataUrl = 'data:image/gif;base64,' + encode64(binaryGif);
             
-            uploadGif(binaryGif);
+            uploadGif(encode64(binaryGif));
 
             $('<img>').attr('src', dataUrl).load(function() {
 				$('#result').html(this);
