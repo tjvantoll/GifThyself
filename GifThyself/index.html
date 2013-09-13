@@ -37,13 +37,19 @@
                     Your gif has been built!
                 </p>
                 <div id="result"></div>
-                <button class="primary" data-role="button" style="display: none;">
-                    Share
-                </button>
                 <a href="#build" data-role="button">
                     Make Changes
                 </a>
+                <button id="shareGif" class="primary" data-role="button">
+                    Share
+                </button>
 	        </div>
+        </div>
+        
+        <div data-role="view" id="share" data-layout="main-layout">
+            <p>
+                Sharing yo' image!
+            </p>
         </div>
         
         <!-- http://cordova.apache.org/docs/en/2.7.0/cordova_camera_camera.md.html#Camera -->
@@ -68,6 +74,6 @@
 		<!-- ??? -->
         <script src="scripts/app/identity-provider.js"></script>
 
-        <script src="scripts/app/main.js" type="text/javascript"></script>
+        <script src="scripts/app/main.js"></script>
     </body>
 </html>

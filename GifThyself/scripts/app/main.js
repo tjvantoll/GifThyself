@@ -41,24 +41,27 @@
     /******************************************************************/
     
     (function() {
+        
+        // Holder for the gif after it has been created but before it's uploaded.
+		var base64EncodedGif;
+        
         function generateQuickGuid() {
             return Math.random().toString(36).substring(2, 15) +
                 Math.random().toString(36).substring(2, 15);
         };
         
-        function uploadGif(data) {
+        function uploadGif() {
             var file = {
                 Filename: generateQuickGuid() + '.gif',
                 ContentType: 'image/gif',
-                base64: data
+                base64: base64EncodedGif
             };
             el.Files.create(file,
                 function(data) {
-                    alert('ok ' + JSON.stringify(data));
                     console.log(data);
                 },
                 function(error) {
-                    alert('fail ' + JSON.stringify(data));                            
+                    alert('Image upload failed ' + JSON.stringify(data));                            
                 }
             );
         };
@@ -105,16 +108,15 @@
     
             encoder.finish();
             
-            var binaryGif = encoder.stream().getData(),
-                dataUrl = 'data:image/gif;base64,' + encode64(binaryGif);
-            
-            uploadGif(encode64(binaryGif));
+            base64EncodedGif = encode64(encoder.stream().getData());
 
-            $('<img>').attr('src', dataUrl).load(function() {
-				$('#result').html(this);
-                $('#preview-container').removeClass('loading');
-                app.hideLoading();
-            });
+            $('<img>')
+            	.attr('src', 'data:image/gif;base64,' + base64EncodedGif)
+            	.load(function() {
+					$('#result').html(this);
+	                $('#preview-container').removeClass('loading');
+	                app.hideLoading();
+	            });
         };
         
         function checkForImages() {
@@ -140,6 +142,12 @@
                 app.showLoading();
                 setTimeout(buildGif, 3000);   
             }
+        });
+        $('#shareGif').on('click', function() {
+			app.navigate('#share');
+            $(app.pane.loader.element).find('h1').text('Uploading...');
+            app.showLoading();
+            setTimeout(uploadGif, 3000);
         });
     }());
 }());
