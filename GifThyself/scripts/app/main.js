@@ -108,7 +108,6 @@
             var binaryGif = encoder.stream().getData(),
                 dataUrl = 'data:image/gif;base64,' + encode64(binaryGif);
             
-            // Upload the gif to Everlive
             uploadGif(binaryGif);
 
             $('<img>').attr('src', dataUrl).load(function() {
