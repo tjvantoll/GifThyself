@@ -8,6 +8,9 @@ p {
     margin-left: 1rem;
     margin-right: 1rem;
 }
+a.km-button:not([data-align="right"]) {
+    width: 80%;
+}
 .primary {
     background: green !important;
 }
@@ -71,7 +74,7 @@ a[href="#build"], a[href="#confirmation"], #shareGif {
 
 input {
     display: block;
-    width: 100%;
+    width: 90%;
     margin: 1em 0;
     height: 30px;
     font-size: 1.1em;
