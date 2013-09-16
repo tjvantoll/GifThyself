@@ -184,7 +184,7 @@
      *
      *   - How can I subscribe to an event in a non-declarative manner?
      *   - Why on iOS is the confirmation button automatically being clicked and I
-     *     have to do this nonsense of disabling the enabling? Really I even need
+     *     have to do this nonsense of disabling then enabling? Really I even need
      *     a setTimeout? Really!?
      */
     window.enableShare = function() {
