@@ -176,7 +176,11 @@
 	        .on('click', '#getPicture', getPicture)
     	    .on('click', '#images button', removeImage)
         	.on('click', '.confirmation-cancel', closeConfirmationDialog)
-        	.on('click', '#build-another', resetApp);
+        	.on('click', '#build-another', resetApp)
+            .on('click', '#viewOnline', function(event) {
+            	event.preventDefault();
+                window.open($(this).attr('href'), '_blank');
+            });
     }());
     
     /**
