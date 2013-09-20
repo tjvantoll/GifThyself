@@ -31,20 +31,6 @@
         masterKey: '!#Masterkey#!'
     });
     
-    /**
-     * TODO: This is absolute insanity.
-     *
-     *   - How can I subscribe to an event in a non-declarative manner?
-     *   - Why on iOS is the confirmation button automatically being clicked and I
-     *     have to do this nonsense of disabling then enabling? Really I even need
-     *     a setTimeout? Really!?
-     */
-    window.enableShare = function() {
-        setTimeout(function() {
-            $('#shareGif').prop('disabled', false);  
-        });
-    };
-    
     document.addEventListener("deviceready", function () {
     	// Setup the Kendo UI Mobile Application
 	    window.app = new kendo.mobile.Application(document.body, { transition: 'slide' });

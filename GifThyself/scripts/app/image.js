@@ -100,10 +100,6 @@
         $('#shareGif').prop('disabled', true);
     };
     
-    function resetApp() {
-        $('#images').empty();
-    };
-    
     window.imageInit = function() {
         $('#buildGif').data('kendoMobileButton').bind('click', function() {
             if (checkForImages()) {
@@ -132,11 +128,14 @@
             }, 3000);
         });
         
+        $('.confirmation-cancel').each(function() {
+			$(this).data('kendoMobileButton').bind('click', closeConfirmationDialog); 
+        });
+        
+        $('#getPicture').data('kendoMobileButton').bind('click', getPicture);
+        
         $(document)
-            .on('click', '#getPicture', getPicture)
             .on('click', '#images button', removeImage)
-            .on('click', '.confirmation-cancel', closeConfirmationDialog)
-            .on('click', '#build-another', resetApp)
             .on('focus', 'input', function() {
                 // See http://stackoverflow.com/questions/3272089/programmatically-selecting-text-in-an-input-field-on-ios-devices-mobile-safari#answer-7436574
                 var self = this;
