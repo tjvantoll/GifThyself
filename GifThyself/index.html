@@ -6,29 +6,37 @@
 
         <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
         <link href="styles/main.css" rel="stylesheet" />
+        <link href="styles/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     </head>
     <body>
         <div data-role="layout" data-id="main-layout">
-
+			<div data-role="header">
+                <div data-role="navbar">
+                    GifThyself
+                </div>
+            </div>
         </div>
 
-        <div data-role="view" id="build" data-layout="main-layout">
+        <div data-role="view" id="build" data-layout="main-layout" data-init="init.build" >
             <p>
                 To create an animated gif, first take the pictures you would like to be included.
             </p>
-			<button data-role="button" id="getPicture" data-icon="camera">
-                Add Picture
-            </button>
-
+           	<p>
+                <a data-role="button" id="getPicture" data-icon="camera">
+                      Add Picture
+                </a>
+            </p>
             <div id="images">
             </div>
             
             <p>
                 When you're happy, use the button below to generate a gif.
             </p>
-            <button id="buildGif" class="primary" data-role="button">
-                Build Gif
-            </button>
+            <p>
+		        <a id="buildGif" class="primary" data-role="button">
+	        	     Build Gif
+        	    </a>
+            </p>
         </div>
         
         <div data-role="view" id="preview" data-layout="main-layout">
@@ -37,45 +45,52 @@
                     Your gif has been built!
                 </p>
                 <div id="result"></div>
-                <a href="#build" data-role="button">
-                    Make Changes
-                </a>
-                <a href="#confirmation" class="primary" data-role="button" data-rel="modalview">
-                    Share
-                </a>
-	        </div>
+                    <p class="halves">
+                        <a href="#build" data-role="button">
+                            Make Changes
+                        </a>
+                        <a href="#confirmation" class="primary" data-role="button">
+                            Share
+                        </a>    
+                    </p>
+                </div>            
+            </div>
         </div>
         
-        <div data-role="modalview" id="confirmation">
+        <div data-role="view" id="confirmation" data-transition="overlay:up" data-init="init.confirm">
             <div data-role="header">
                 <div data-role="navbar">
                     <span>Confirmation</span>
-                    <a data-role="button" data-align="right" class="confirmation-cancel">Cancel</a>
                 </div>
             </div>
             <div>
                 <p>
                     Sharing will upload your gif to a publicly accessible URL where it can then be shared to a service of your choosing. Cool with that?
                 </p>
-                <button data-role="button" class="confirmation-cancel">
-                    Uh... no.
-                </button>
-                <button id="shareGif" data-role="button" class="primary" disabled>
-                    Yeah, let's do this!
-                </button>
+                <p class="halves">
+                	<a id="shareGif" data-role="button" data-icon="ok" class="fa">
+                    	Yeah!
+                	</a>    
+                    <a class="fa" data-role="button" data-align="left" data-icon="remove" href="#preview">Um, no</a>
+                </p>
             </div>
         </div>
         
-        <div data-role="view" id="share" data-layout="main-layout">
+        <div data-role="view" id="share" data-layout="main-layout" data-model="models.share">
             <div id="share-results-container">
-				<p>Your image was uploaded successfully!</p>
+				<p>Your image was uploaded successfully!.</p>
 				<p>
-                    Here's a copyable URL you can use to share your image.
-                    <input value="' + url + '">
-	                <a href="" id="viewOnline">View Online</a>
+                    <input data-bind="value: url" />
+                </p>                        
+    			<p>
+                    <a data-role="button" data-icon="action" data-bind="click: events.view">View</a>
+                </p>                    
+				<p>
+                    <a data-role="button" data-icon="share" data-bind="click: events.share, visible: support.sharing">Share</a>
                 </p>
-				
-                <a href="#build" id="build-another" data-role="button" class="primary">Build Another</a>
+				<p>
+                    <a href="#build" id="build-another" data-role="button" data-icon="refresh">Again!</a>
+                </p>
             </div>
         </div>
         
@@ -93,12 +108,14 @@
         <script src="scripts/lib/megapix-image.js"></script>
         
         <script src="kendo/js/jquery.min.js"></script>
-        <script src="kendo/js/kendo.mobile.min.js"></script>
+		<script src="kendo/js/kendo.mobile.js"></script>
         
         <!-- https://www.everlive.com/AllApps/ManageApp/CodeReference?moduleId=d1752fd0-1636-11e3-8518-fb84816882a2#navigationPlaceholder-Documentation-nav-JavaScript-SDK -->
         <script src="scripts/lib/everlive.all.min.js"></script>
 
         <script src="scripts/app/main.js"></script>
         <script src="scripts/app/image.js"></script>
+        
+		<script src="social.js"></script>
     </body>
 </html>
