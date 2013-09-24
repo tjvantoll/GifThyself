@@ -4,7 +4,7 @@
     /******************************************************************/
     // global error handling
     /******************************************************************/
-    var showAlert = function(message, title, callback) {
+    /* var showAlert = function(message, title, callback) {
         window.alert(message, callback || function () {}, title, 'OK');
     };
     var showError = function(message) {
@@ -15,7 +15,7 @@
         var message = e.message + "' from " + e.filename + ":" + e.lineno;
         showAlert(message, 'Error occured');
         return true;
-    });
+    }); */
  
     
     /******************************************************************/
@@ -30,11 +30,22 @@
         apiKey: 'oFGC6drHAMPPmAwG',
         masterKey: '!#Masterkey#!'
     });
+  
+	window.app = new kendo.mobile.Application(document.body, { 
+            transition: 'slide', 
+            skin: "flat"
+    });
     
     document.addEventListener("deviceready", function () {
     	// Setup the Kendo UI Mobile Application
-	    window.app = new kendo.mobile.Application(document.body, { transition: 'slide' });
-		window.imageInit();
+        /* global.app = new kendo.mobile.Application(document.body, { 
+            transition: 'slide', 
+            initial: "#share",
+            skin: "flat",
+            init: function() {
+                console.log("initialized");
+            }
+        });*/
     }, false);
 }());
 
