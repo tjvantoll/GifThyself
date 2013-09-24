@@ -1,18 +1,6 @@
-p {
-    margin-left: 0;
-    margin-right: 0;
-}
-.km-button:not([data-align="right"]) {
-    font-size: 1.5em;
-    width: 90%;
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-a.km-button:not([data-align="right"]) {
-    width: 80%;
-}
-.primary {
-    background: green !important;
+.thirds > a {
+    width: 23%;
+    font-size: .8em;
 }
 
 #images {
@@ -58,25 +46,42 @@ a.km-button:not([data-align="right"]) {
     -webkit-transition: opacity 0s;
 }
 
-#confirmation {
-    min-height: 20em;
-    width: 95%;
-}
-
 #result {
     width: 200px;
     text-align: center;
     margin: 1em auto;
 }
-a[href="#build"], a[href="#confirmation"], #shareGif {
-    margin-top: 0.5em;
-}
 
 input {
     display: block;
-    width: 90%;
+    width: 100%;
     margin: 1em 0;
     height: 30px;
     font-size: 1.1em;
     border-radius: 5px;
+}
+
+#share-results-container a{
+    width: 100%;
+}
+
+.halves a {
+    text-align: center;
+    width: 48%;
+}
+
+.fa .km-icon:after,
+.fa .km-icon:before
+{
+    font: 1em/1em 'FontAwesome';
+}
+
+.km-remove:after,
+.km-remove:before {
+  content: "\F00D";
+}
+
+.km-ok:after,
+.km-ok:before {
+  content: "\F00C";
 }
