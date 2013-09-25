@@ -16,14 +16,14 @@
                 base64: base64EncodedGif
             };
         el.Files.create(file,
-                        function(data) {
-                            deferred.resolve(data);
-                        },
-                        function(error) {
-                            alert('Image upload failed.');
-                            deferred.reject(error);
-                        }
-                       );
+			function(data) {
+				deferred.resolve(data);
+			},
+			function(error) {
+				alert('Image upload failed.');
+				deferred.reject(error);
+			}
+		);
         return deferred;
     };
     
