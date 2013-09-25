@@ -1,7 +1,9 @@
 (function() {
     
     // Holder for the gif after it has been created but before it's uploaded.
-    var base64EncodedGif, url;
+    var base64EncodedGif,
+        // Holder for the URL that points to the gif after upload.
+        url;
     
     function generateQuickGuid() {
         return Math.random().toString(36).substring(2, 15) +
