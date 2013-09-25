@@ -46,7 +46,7 @@
             image.attr('src', 'data:image/jpeg;base64,' + data);
             canvas = renderImageInCanvas(image[0]);
             
-            imageContainer.append(canvas, image, $('<button>X</button>'));
+            imageContainer.append(canvas, image, $('<button><span>X</span></button>'));
             $('#images').append(imageContainer);
         }, function(message) {
             alert('Image add failed: ' + message);

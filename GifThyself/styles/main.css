@@ -23,11 +23,17 @@
     height: 25px;
     background: red;
     color: white;
-    text-align: center;
     text-decoration: none;
     border: none;
     font-family: Verdana;
     font-weight: bold;
+    padding: 0;
+    border-radius: 5px;
+}
+#images button span {
+    position: absolute;
+    right: 8px;
+    top: 6px;
 }
 #images canvas {
     max-width: 100px;
