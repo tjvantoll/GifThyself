@@ -33,7 +33,7 @@
             iOS = window.app.os.ios;
         
         // See http://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios
-        mpImg.render(canvas, { maxWidth: 200, maxHeight: 200, orientation: (iOS ? 6 : 1) });
+        mpImg.render(canvas, { maxWidth: 500, maxHeight: 500, orientation: (iOS ? 6 : 1) });
         return canvas;
     };
     

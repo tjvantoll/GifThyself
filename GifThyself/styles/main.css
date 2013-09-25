@@ -57,6 +57,10 @@
     text-align: center;
     margin: 1em auto;
 }
+#result img {
+    max-width: 200px;
+    max-height: 300px;
+}
 
 input {
     display: block;
