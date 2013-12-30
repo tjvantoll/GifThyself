@@ -23,7 +23,8 @@
     document.addEventListener( "deviceready", function () {
         window.app = new kendo.mobile.Application( document.body, { 
             transition: "slide", 
-            skin: "flat"
+            skin: "flat",
+            statusBarStyle: "black-translucent"
         });
         navigator.splashscreen.hide();
     }, false );
