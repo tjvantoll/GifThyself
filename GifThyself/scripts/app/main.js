@@ -18,9 +18,7 @@
     });*/
 
     // initialize Everlive SDK
-    window.el = new Everlive({
-        apiKey: 'oFGC6drHAMPPmAwG'
-    });
+    window.el = new Everlive( "oFGC6drHAMPPmAwG" );
   
     document.addEventListener( "deviceready", function () {
         window.app = new kendo.mobile.Application( document.body, { 
