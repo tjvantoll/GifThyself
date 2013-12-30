@@ -1,5 +1,5 @@
 (function () {
-    'use strict';
+    "use strict";
 
     /******************************************************************/
     // global error handling
@@ -16,26 +16,19 @@
         showAlert(message, 'Error occured');
         return true;
     });*/
-    
-    /******************************************************************/
-    // config
-    /******************************************************************/
-    var applicationSettings = {
-        emptyGuid: '00000000-0000-0000-0000-000000000000'
-    };
 
     // initialize Everlive SDK
     window.el = new Everlive({
-        apiKey: 'oFGC6drHAMPPmAwG',
-        masterKey: '!#Masterkey#!'
+        apiKey: 'oFGC6drHAMPPmAwG'
     });
   
-	window.app = new kendo.mobile.Application(document.body, { 
-        transition: 'slide', 
-        skin: 'flat'
-    });
-
-    document.addEventListener("deviceready", function () {}, false);
+    document.addEventListener( "deviceready", function () {
+        window.app = new kendo.mobile.Application( document.body, { 
+            transition: "slide", 
+            skin: "flat"
+        });
+        navigator.splashscreen.hide();
+    }, false );
 }());
 
 
