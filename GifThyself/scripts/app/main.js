@@ -26,7 +26,8 @@
             skin: "flat",
             statusBarStyle: "black-translucent"
         });
-        navigator.splashscreen.hide();
+      	navigator.splashscreen.hide();    
+        
     }, false );
 }());
 
