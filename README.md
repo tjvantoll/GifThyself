@@ -1,1 +1,1 @@
-GifThyself is a hybrid, [Icenium](http://www.icenium.com/) built application that allows you to build and share animated gifs using your iOS or Android device's built in camera.
+GifThyself is a hybrid application built with [Telerik AppBuilder](http://www.telerik.com/appbuilder) that allows you to build and share animated gifs using your iOS or Android device's built in camera.
