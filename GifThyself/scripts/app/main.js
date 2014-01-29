@@ -4,20 +4,19 @@
     /******************************************************************/
     // global error handling
     /******************************************************************/
-    /*var showAlert = function(message, title, callback) {
-        window.alert(message, callback || function () {}, title, 'OK');
+    function showAlert( message, title, callback ) {
+        window.alert( message, callback || function () {}, title, "OK" );
     };
-    var showError = function(message) {
-        showAlert(message, 'Error occured');
+    function showError( message ) {
+        showAlert( message, "Error occurred" );
     };
-    window.addEventListener('error', function (e) {
+    window.addEventListener( "error", function ( e ) {
         e.preventDefault();
         var message = e.message + "' from " + e.filename + ":" + e.lineno;
-        showAlert(message, 'Error occured');
+        showAlert( message, "Error occurred" );
         return true;
-    });*/
+    });
 
-    // initialize Everlive SDK
     window.el = new Everlive( "oFGC6drHAMPPmAwG" );
   
     document.addEventListener( "deviceready", function () {
@@ -27,6 +26,7 @@
             statusBarStyle: "black-translucent"
         });
       	navigator.splashscreen.hide();
+        analytics.Start();
     }, false );
 }());
 
