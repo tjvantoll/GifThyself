@@ -16,6 +16,8 @@
     <DisplayName />
     <iOSDisplayName />
     <WP8SupportedResolutions>ID_RESOLUTION_WVGA;ID_RESOLUTION_WXGA;ID_RESOLUTION_HD720P</WP8SupportedResolutions>
+    <WP8ProductID>{c5c88e74-6ec8-4ec2-b55c-2ff8b1bca3f3}</WP8ProductID>
+    <WP8PublisherID>{b851a91b-056f-466e-b305-5da5a808cf8d}</WP8PublisherID>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Telerik\ICE\Tools\Mobile\MobileTools.targets" />
 </Project>
