@@ -26,7 +26,8 @@
 		"org.apache.cordova.network-information",
 		"org.apache.cordova.splashscreen",
 		"org.apache.cordova.statusbar",
-		"org.apache.cordova.vibration"
+		"org.apache.cordova.vibration",
+		"com.telerik.plugin.eqatecanalytics"
 	],
 	"AndroidPermissions": [
 		"android.permission.CAMERA",
