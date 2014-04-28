@@ -1,125 +1,113 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>GifThyself</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta charset="utf-8">
+<head>
+	<title>GifThyself</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
 
-        <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet">
-        <link href="styles/main.css" rel="stylesheet">
-        <link href="styles/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-        <!-- Splash screen generated using http://jsfiddle.net/tj_vantoll/d5UT9/ and http://ticons.fokkezb.nl/ -->
-        <!-- Icons generated using http://jsfiddle.net/tj_vantoll/KL5tB/ and http://makeappicon.com/ -->
-        <!-- Nine patch generated using http://android-ui-utils.googlecode.com/hg/asset-studio/dist/nine-patches.html -->
-    </head>
-    <body>
-        <div data-role="layout" data-id="main-layout">
-			<div data-role="header">
-                <div data-role="navbar">
-                    GifThyself
-                </div>
-            </div>
-        </div>
+	<link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet">
+	<link href="styles/main.css" rel="stylesheet">
+	<link href="styles/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<!-- Splash screen generated using http://jsfiddle.net/tj_vantoll/d5UT9/ and http://ticons.fokkezb.nl/ -->
+	<!-- Icons generated using http://jsfiddle.net/tj_vantoll/KL5tB/ and http://makeappicon.com/ -->
+	<!-- Nine patch generated using http://android-ui-utils.googlecode.com/hg/asset-studio/dist/nine-patches.html -->
+</head>
+<body>
 
-        <div data-role="view" id="build" data-layout="main-layout" data-init="init.build" >
-            <p>
-                To create an animated gif, first take the pictures you would like to be included.
-            </p>
-           	<p>
-                <a data-role="button" id="getPicture" data-icon="camera">
-                      Add Picture
-                </a>
-            </p>
-            <div id="images">
-            </div>
-            
-            <p>
-                When you're happy, use the button below to generate a gif.
-            </p>
-            <p>
-		        <a id="buildGif" class="primary" data-role="button">
-	        	     Build Gif
-        	    </a>
-            </p>
-        </div>
-        
-        <div data-role="view" id="preview" data-layout="main-layout">
-            <div id="preview-container">
-                <p>
-                    Your gif has been built!
-                </p>
-                <div id="result"></div>
-                    <p class="halves">
-                        <a href="#build" data-role="button">
-                            Make Changes
-                        </a>
-                        <a href="#confirmation" class="primary" data-role="button">
-                            Share
-                        </a>    
-                    </p>
-                </div>            
-            </div>
-        </div>
-        
-        <div data-role="view" id="confirmation" data-transition="overlay:up" data-init="init.confirm">
-            <div data-role="header">
-                <div data-role="navbar">
-                    <span>Confirmation</span>
-                </div>
-            </div>
-            <div>
-                <p>
-                    Sharing will upload your gif to a publicly accessible URL where it can then be shared to a service of your choosing. Cool with that?
-                </p>
-                <p class="halves">
-                	<a id="shareGif" data-role="button" data-icon="ok" class="fa">
-                    	Yeah!
-                	</a>    
-                    <a class="fa" data-role="button" data-align="left" data-icon="remove" href="#preview">Um, no</a>
-                </p>
-            </div>
-        </div>
-        
-        <div data-role="view" id="share" data-layout="main-layout" data-model="models.share">
-            <div id="share-results-container">
-				<p>Your image was uploaded successfully!.</p>
-				<p>
-                    <input data-bind="value: url" />
-                </p>                        
-    			<p>
-                    <a data-role="button" data-icon="action" data-bind="click: events.view">View</a>
-                </p>                    
-				<p>
-                    <a data-role="button" data-icon="share" data-bind="click: events.share, visible: support.sharing">Share</a>
-                </p>
-				<p>
-                    <a href="#build" id="build-another" data-role="button" data-icon="refresh">Again!</a>
-                </p>
-            </div>
-        </div>
-        
-        <script src="cordova.js"></script>
+<div data-role="layout" data-id="main-layout">
+	<div data-role="header">
+		<div data-role="navbar">GifThyself</div>
+	</div>
+</div>
 
-        <!-- https://github.com/antimatter15/jsgif -->
-        <!-- http://workshop.rs/2013/07/use-webcam-to-create-animated-gif/ -->
-        <script src="scripts/lib/gif/LZWEncoder.js"></script>
-        <script src="scripts/lib/gif/NeuQuant.js"></script>
-        <script src="scripts/lib/gif/GIFEncoder.js"></script>
-        <script src="scripts/lib/gif/b64.js"></script>
-        
-        <!-- http://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios -->
-        <script src="scripts/lib/megapix-image.js"></script>
-        
-        <script src="kendo/js/jquery.min.js"></script>
-		<script src="kendo/js/kendo.mobile.min.js"></script>
-        
-        <!-- https://www.everlive.com/AllApps/ManageApp/CodeReference?moduleId=d1752fd0-1636-11e3-8518-fb84816882a2#navigationPlaceholder-Documentation-nav-JavaScript-SDK -->
-        <script src="scripts/lib/everlive.all.min.js"></script>
+<div data-role="view" id="build" data-layout="main-layout" data-init="init.build" >
+	<p>To create an animated gif, first take the pictures you would like to be included.</p>
+	<p>
+		<a data-role="button" id="getPicture" data-icon="camera">Add Picture</a>
+	</p>
+	<div id="images">
+	</div>
 
-        <script src="scripts/app/main.js"></script>
-        <script src="scripts/app/image.js"></script>
-	    <script src="scripts/app/analytics.js"></script>
-        
-		<script src="social.js"></script>
-    </body>
+	<p>When you're happy, use the button below to generate a gif.</p>
+	<p>
+		<a id="buildGif" class="primary" data-role="button">Build Gif</a>
+	</p>
+</div>
+
+<div data-role="view" id="preview" data-layout="main-layout">
+	<div id="preview-container">
+		<p>Your gif has been built!</p>
+		<div id="result"></div>
+			<p class="halves">
+				<a href="#build" data-role="button">
+					Make Changes
+				</a>
+				<a href="#confirmation" class="primary" data-role="button">
+					Share
+				</a>    
+			</p>
+		</div>            
+	</div>
+</div>
+
+<div data-role="view" id="confirmation" data-transition="overlay:up" data-init="init.confirm">
+	<div data-role="header">
+		<div data-role="navbar">
+			<span>Confirmation</span>
+		</div>
+	</div>
+	<div>
+		<p>
+			Sharing will upload your gif to a publicly accessible URL where it can then be shared to a service of your choosing. Cool with that?
+		</p>
+		<p class="halves">
+			<a id="shareGif" data-role="button" data-icon="ok" class="fa">Yeah!</a>    
+			<a class="fa" data-role="button" data-align="left" data-icon="remove" href="#preview">Um, no</a>
+		</p>
+	</div>
+</div>
+
+<div data-role="view" id="share" data-layout="main-layout" data-model="models.share">
+	<div id="share-results-container">
+		<p>Your image was uploaded successfully!.</p>
+		<p>
+			<input data-bind="value: url" />
+		</p>                        
+		<p>
+			<a data-role="button" data-icon="action" data-bind="click: events.view">View</a>
+		</p>                    
+		<p>
+			<a data-role="button" data-icon="share" data-bind="click: events.share, visible: support.sharing">Share</a>
+		</p>
+		<p>
+			<a href="#build" id="build-another" data-role="button" data-icon="refresh">Again!</a>
+		</p>
+	</div>
+</div>
+
+<script src="cordova.js"></script>
+
+<!-- https://github.com/antimatter15/jsgif -->
+<!-- http://workshop.rs/2013/07/use-webcam-to-create-animated-gif/ -->
+<script src="scripts/lib/gif/LZWEncoder.js"></script>
+<script src="scripts/lib/gif/NeuQuant.js"></script>
+<script src="scripts/lib/gif/GIFEncoder.js"></script>
+<script src="scripts/lib/gif/b64.js"></script>
+
+<!-- http://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios -->
+<script src="scripts/lib/megapix-image.js"></script>
+
+<script src="kendo/js/jquery.min.js"></script>
+<script src="kendo/js/kendo.mobile.min.js"></script>
+
+<!-- https://www.everlive.com/AllApps/ManageApp/CodeReference?moduleId=d1752fd0-1636-11e3-8518-fb84816882a2#navigationPlaceholder-Documentation-nav-JavaScript-SDK -->
+<script src="scripts/lib/everlive.all.min.js"></script>
+
+<script src="scripts/app/main.js"></script>
+<script src="scripts/app/image.js"></script>
+<script src="scripts/app/analytics.js"></script>
+
+<script src="social.js"></script>
+
+</body>
 </html>
