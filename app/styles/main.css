@@ -1,10 +1,10 @@
-.halves a {
-	text-align: center;
-	width: 48%;
+.km-flat .km-button {
+	font-size: 1.2em;
+	width: 100%;
 }
-.thirds > a {
-	width: 23%;
-	font-size: .8em;
+.halves .km-button {
+	width: 48%;
+	text-align: center;
 }
 
 #images {
