@@ -29,35 +29,6 @@
 		return deferred;
 	};
 
-	function renderImageInCanvas( image, canvas ) {
-		var mpImg = new MegaPixImage( image ),
-			canvas = canvas || document.createElement( "canvas" ),
-			iOS = window.app.os.ios;
-
-		// See http://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios
-		mpImg.render(canvas, { maxWidth: 350, maxHeight: 350, orientation: ( iOS ? 6 : 1 ) });
-		return canvas;
-	};
-	
-	function getPicture() {
-		analytics.Monitor().TrackFeature( "Image.Add" );
-		navigator.camera.getPicture(function( data ) {
-			var canvas,
-				image = $( "<img>" ),
-				imageContainer = $( "<div>" );
-
-			image.attr( "src", "data:image/jpeg;base64," + data);
-			canvas = renderImageInCanvas( image[ 0 ] );
-
-			imageContainer.append( canvas, image, $( "<button><span>X</span></button>" ) );
-			$( "#images" ).append( imageContainer );
-		}, function( message ) {
-			alert( "Image add failed: " + message );
-		}, {
-			destinationType: Camera.DestinationType.DATA_URL
-		});
-	};
-
 	function buildGif() {
 		var encoder = new GIFEncoder();
 		encoder.setRepeat( 0 );
@@ -84,19 +55,6 @@
 				app.hideLoading();
 			});
 	};
-	
-	function checkForImages() {
-		var count = $( "#images img" ).length;
-		if ( count < 2 ) {
-			alert( "Please add at least 2 images." );
-			return false;
-		}
-		return true;
-	};
-
-	function removeImage() {
-		$( this ).parents( "div" ).first().remove();
-	};
 
 	function closeConfirmationDialog() {
 		$( "#confirmation" ).kendoMobileModalView( "close" );
@@ -104,21 +62,6 @@
 	};
 
 	window.init = {
-		build: function() {
-			$( "#buildGif" ).data( "kendoMobileButton" ).bind( "click", function() {
-				if ( checkForImages() ) {
-					app.navigate( "#preview" );
-					$( app.pane.loader.element ).find( "h1" ).text( "Building..." );
-					$( "#preview-container" ).addClass( "loading" );
-					app.showLoading();
-					setTimeout( buildGif, 3000 );
-				}
-			});
-
-			$( "#getPicture" )
-				.data( "kendoMobileButton" )
-				.bind( "click", getPicture );
-		},
 		confirm: function() {
 			$( "#shareGif" ).data( "kendoMobileButton" ).bind( "click", function() {
 				app.navigate( "#share" );
@@ -136,7 +79,6 @@
 	}
 
 	$( document )
-		.on( "click", "#images button", removeImage )
 		.on( "focus", "input", function() {
 			// See http://stackoverflow.com/questions/3272089/programmatically-selecting-text-in-an-input-field-on-ios-devices-mobile-safari#answer-7436574
 			var self = this;

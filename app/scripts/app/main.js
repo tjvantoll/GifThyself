@@ -18,6 +18,16 @@
 	});*/
 
 	window.el = new Everlive( "oFGC6drHAMPPmAwG" );
+	window.renderImageInCanvas = function( image, canvas ) {
+		var mpImg = new MegaPixImage( image ),
+			canvas = canvas || document.createElement( "canvas" ),
+			iOS = window.app.os.ios;
+
+		// See http://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios
+		mpImg.render(canvas, { maxWidth: 350, maxHeight: 350, orientation: ( iOS ? 6 : 1 ) });
+		return canvas;
+	};
+	window.models = {};
 
 	document.addEventListener( "deviceready", function () {
 		window.app = new kendo.mobile.Application( document.body, { 

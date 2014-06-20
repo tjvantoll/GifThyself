@@ -20,17 +20,17 @@
 	</div>
 </div>
 
-<div data-role="view" id="build" data-layout="main-layout" data-init="init.build" >
+<div data-role="view" id="build" data-layout="main-layout" data-model="models.build">
 	<p>To create an animated gif, first take the pictures you would like to be included.</p>
 	<p>
-		<a data-role="button" id="getPicture" data-icon="camera">Add Picture</a>
+		<a data-role="button" id="getPicture" data-icon="camera" data-bind="click: getPicture">Add Picture</a>
 	</p>
 	<div id="images">
 	</div>
 
 	<p>When you're happy, use the button below to generate a gif.</p>
 	<p>
-		<a id="buildGif" class="primary" data-role="button">Build Gif</a>
+		<a id="buildGif" class="primary" data-role="button" data-bind="click: buildGif">Build Gif</a>
 	</p>
 </div>
 
@@ -104,6 +104,7 @@
 <script src="scripts/lib/everlive.all.min.js"></script>
 
 <script src="scripts/app/main.js"></script>
+<script src="scripts/app/build.js"></script>
 <script src="scripts/app/image.js"></script>
 <script src="scripts/app/analytics.js"></script>
 
