@@ -1,3 +1,7 @@
+.halves a {
+	text-align: center;
+	width: 48%;
+}
 .thirds > a {
 	width: 23%;
 	font-size: .8em;
@@ -75,13 +79,8 @@ input {
 	width: 100%;
 }
 
-.halves a {
-	text-align: center;
-	width: 48%;
-}
-
-.fa .km-icon::after,
-.fa .km-icon::before {
+.font-awesome .km-icon::after,
+.font-awesome .km-icon::before {
 	font: 1em/1em 'FontAwesome';
 }
 .km-remove::after,

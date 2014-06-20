@@ -23,14 +23,14 @@
 <div data-role="view" id="build" data-layout="main-layout" data-model="models.build">
 	<p>To create an animated gif, first take the pictures you would like to be included.</p>
 	<p>
-		<a data-role="button" id="getPicture" data-icon="camera" data-bind="click: getPicture">Add Picture</a>
+		<a data-role="button" data-icon="camera" data-bind="click: getPicture">Add Picture</a>
 	</p>
 
 	<div id="images"></div>
 
 	<p>When you're happy, use the button below to generate a gif.</p>
 	<p>
-		<a id="buildGif" class="primary" data-role="button" data-bind="click: navigate">Build Gif</a>
+		<a class="primary" data-role="button" data-bind="click: navigate">Build Gif</a>
 	</p>
 </div>
 
@@ -57,8 +57,8 @@
 			Sharing will upload your gif to a publicly accessible URL where it can then be shared to a service of your choosing. Cool with that?
 		</p>
 		<p class="halves">
-			<a id="shareGif" data-role="button" data-icon="ok" class="fa" data-bind="click: yes">Yeah!</a>
-			<a class="fa" data-role="button" data-align="left" data-icon="remove" href="#build">Um, no</a>
+			<a data-role="button" data-icon="ok" class="font-awesome" data-bind="click: yes">Yeah!</a>
+			<a class="font-awesome" data-role="button" data-align="left" data-icon="remove" href="#build">Um, no</a>
 		</p>
 	</div>
 </div>
