@@ -1,4 +1,6 @@
 (function() {
+	"use strict";
+
 	function checkForImages() {
 		var count = $( "#images img" ).length;
 		if ( count < 2 ) {
@@ -27,19 +29,18 @@
 		});
 	};
 
-	function buildGif() {
+	function navigate() {
 		if ( checkForImages() ) {
 			app.navigate( "#preview" );
 			$( app.pane.loader.element ).find( "h1" ).text( "Building..." );
 			$( "#preview-container" ).addClass( "loading" );
 			app.showLoading();
-			setTimeout( buildGif, 3000 );
 		}
 	};
 
 	window.models.build = kendo.observable({
 		getPicture: getPicture,
-		buildGif: buildGif
+		navigate: navigate
 	});
 
 	$( document ).on( "click", "#images button", function() {

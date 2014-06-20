@@ -31,7 +31,8 @@
 
 	document.addEventListener( "deviceready", function () {
 		window.app = new kendo.mobile.Application( document.body, { 
-			transition: "slide", 
+			transition: "slide",
+			initial: "build",
 			skin: "flat",
 			statusBarStyle: "black-translucent"
 		});

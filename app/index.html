@@ -25,32 +25,28 @@
 	<p>
 		<a data-role="button" id="getPicture" data-icon="camera" data-bind="click: getPicture">Add Picture</a>
 	</p>
-	<div id="images">
-	</div>
+
+	<div id="images"></div>
 
 	<p>When you're happy, use the button below to generate a gif.</p>
 	<p>
-		<a id="buildGif" class="primary" data-role="button" data-bind="click: buildGif">Build Gif</a>
+		<a id="buildGif" class="primary" data-role="button" data-bind="click: navigate">Build Gif</a>
 	</p>
 </div>
 
-<div data-role="view" id="preview" data-layout="main-layout">
+<div data-role="view" id="preview" data-layout="main-layout" data-before-show="models.preview.load">
 	<div id="preview-container">
 		<p>Your gif has been built!</p>
 		<div id="result"></div>
 			<p class="halves">
-				<a href="#build" data-role="button">
-					Make Changes
-				</a>
-				<a href="#confirmation" class="primary" data-role="button">
-					Share
-				</a>
+				<a href="#build" data-role="button">Make Changes</a>
+				<a href="#confirmation" class="primary" data-role="button">Share</a>
 			</p>
 		</div>
 	</div>
 </div>
 
-<div data-role="view" id="confirmation" data-transition="overlay:up" data-init="init.confirm">
+<div data-role="view" id="confirmation" data-transition="overlay:up" data-model="models.confirm">
 	<div data-role="header">
 		<div data-role="navbar">
 			<span>Confirmation</span>
@@ -61,13 +57,13 @@
 			Sharing will upload your gif to a publicly accessible URL where it can then be shared to a service of your choosing. Cool with that?
 		</p>
 		<p class="halves">
-			<a id="shareGif" data-role="button" data-icon="ok" class="fa">Yeah!</a>    
-			<a class="fa" data-role="button" data-align="left" data-icon="remove" href="#preview">Um, no</a>
+			<a id="shareGif" data-role="button" data-icon="ok" class="fa" data-bind="click: yes">Yeah!</a>
+			<a class="fa" data-role="button" data-align="left" data-icon="remove" href="#build">Um, no</a>
 		</p>
 	</div>
 </div>
 
-<div data-role="view" id="share" data-layout="main-layout">
+<div data-role="view" id="share" data-layout="main-layout" data-model="models.share">
 	<div id="share-results-container">
 		<p>Your image was uploaded successfully!.</p>
 		<p>
@@ -99,14 +95,14 @@
 
 <script src="kendo/js/jquery.min.js"></script>
 <script src="kendo/js/kendo.mobile.min.js"></script>
-
-<!-- https://www.everlive.com/AllApps/ManageApp/CodeReference?moduleId=d1752fd0-1636-11e3-8518-fb84816882a2#navigationPlaceholder-Documentation-nav-JavaScript-SDK -->
 <script src="scripts/lib/everlive.all.min.js"></script>
+<script src="scripts/app/analytics.js"></script>
 
 <script src="scripts/app/main.js"></script>
 <script src="scripts/app/build.js"></script>
-<script src="scripts/app/image.js"></script>
-<script src="scripts/app/analytics.js"></script>
+<script src="scripts/app/preview.js"></script>
+<script src="scripts/app/confirm.js"></script>
+<script src="scripts/app/share.js"></script>
 
 </body>
 </html>
