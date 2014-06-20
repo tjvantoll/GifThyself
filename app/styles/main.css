@@ -1,97 +1,94 @@
 .thirds > a {
-    width: 23%;
-    font-size: .8em;
+	width: 23%;
+	font-size: .8em;
 }
 
 #images {
-    border: 1px dotted black;
-    min-height: 100px;
-    margin-left: 1rem;
-    margin-right: 1rem;
+	border: 1px dotted black;
+	min-height: 100px;
+	margin-left: 1rem;
+	margin-right: 1rem;
 	margin: 1em 1rem 0 1rem;
 }
 #images > div {
-    position: relative;
-    display: inline-block;
-    margin: 0.3em;
+	position: relative;
+	display: inline-block;
+	margin: 0.3em;
 }
 #images button {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 25px;
-    height: 25px;
-    background: red;
-    color: white;
-    text-decoration: none;
-    border: none;
-    font-family: Verdana;
-    font-weight: bold;
-    padding: 0;
-    border-radius: 5px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 25px;
+	height: 25px;
+	background: red;
+	color: white;
+	text-decoration: none;
+	border: none;
+	font-family: Verdana;
+	font-weight: bold;
+	padding: 0;
+	border-radius: 5px;
 }
 #images button span {
-    position: absolute;
-    right: 8px;
-    top: 6px;
+	position: absolute;
+	right: 8px;
+	top: 6px;
 }
 #images canvas {
-    max-width: 100px;
-    max-height: 100px;
+	max-width: 100px;
+	max-height: 100px;
 }
 #images img {
-    display: none;
+	display: none;
 }
 
 #preview-container, #share-results-container {
-    opacity: 1;
-    -webkit-transition: opacity 1s;
+	opacity: 1;
+	-webkit-transition: opacity 1s;
 }
 #preview-container.loading, #share-results-container.loading {
-    opacity: 0;
-    -webkit-transition: opacity 0s;
+	opacity: 0;
+	-webkit-transition: opacity 0s;
 }
 
 #result {
-    width: 200px;
-    text-align: center;
-    margin: 1em auto;
+	width: 200px;
+	text-align: center;
+	margin: 1em auto;
 }
 #result img {
-    max-width: 200px;
-    max-height: 300px;
+	max-width: 200px;
+	max-height: 300px;
 }
 
 input {
-    display: block;
-    width: 100%;
-    margin: 1em 0;
-    height: 30px;
-    font-size: 1.1em;
-    border-radius: 5px;
+	display: block;
+	width: 100%;
+	margin: 1em 0;
+	height: 30px;
+	font-size: 1.1em;
+	border-radius: 5px;
 }
 
-#share-results-container a{
-    width: 100%;
+#share-results-container a {
+	width: 100%;
 }
 
 .halves a {
-    text-align: center;
-    width: 48%;
+	text-align: center;
+	width: 48%;
 }
 
-.fa .km-icon:after,
-.fa .km-icon:before
-{
-    font: 1em/1em 'FontAwesome';
+.fa .km-icon::after,
+.fa .km-icon::before {
+	font: 1em/1em 'FontAwesome';
 }
-
-.km-remove:after,
-.km-remove:before {
-  content: "\F00D";
+.km-remove::after,
+.km-remove::before {
+	content: "\F00D";
 }
-
-.km-ok:after,
-.km-ok:before {
-  content: "\F00C";
+.km-ok::after,
+.km-ok::before {
+	content: "\F00C";
 }
