@@ -1,5 +1,4 @@
 {
-	"name": "GifThyself",
 	"projectVersion": 1,
 	"AppIdentifier": "com.telerik.app",
 	"DisplayName": "GifThyself",
@@ -71,5 +70,6 @@
 		"ID_RESOLUTION_HD720P"
 	],
 	"WP8PublisherID": "{a266c98f-40f3-4e32-a14e-dcc84d873d76}",
-	"WP8ProductID": "{af02b3c1-de0f-4b28-8dd8-53a78005d5c1}"
+	"WP8ProductID": "{af02b3c1-de0f-4b28-8dd8-53a78005d5c1}",
+	"ProjectName": "GifThyself"
 }

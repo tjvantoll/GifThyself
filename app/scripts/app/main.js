@@ -18,7 +18,7 @@
 	});*/
 
 	window.el = new Everlive( "oFGC6drHAMPPmAwG" );
-  
+
 	document.addEventListener( "deviceready", function () {
 		window.app = new kendo.mobile.Application( document.body, { 
 			transition: "slide", 

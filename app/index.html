@@ -67,7 +67,7 @@
 	</div>
 </div>
 
-<div data-role="view" id="share" data-layout="main-layout" data-model="models.share">
+<div data-role="view" id="share" data-layout="main-layout">
 	<div id="share-results-container">
 		<p>Your image was uploaded successfully!.</p>
 		<p>
@@ -76,9 +76,9 @@
 		<p>
 			<a data-role="button" data-icon="action" data-bind="click: events.view">View</a>
 		</p>
-		<p>
+		<!--<p>
 			<a data-role="button" data-icon="share" data-bind="click: events.share, visible: support.sharing">Share</a>
-		</p>
+		</p>-->
 		<p>
 			<a href="#build" id="build-another" data-role="button" data-icon="refresh">Again!</a>
 		</p>
@@ -106,8 +106,6 @@
 <script src="scripts/app/main.js"></script>
 <script src="scripts/app/image.js"></script>
 <script src="scripts/app/analytics.js"></script>
-
-<script src="social.js"></script>
 
 </body>
 </html>
