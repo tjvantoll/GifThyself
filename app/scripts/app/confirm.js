@@ -1,8 +1,6 @@
 (function() {
 	"use strict";
 
-	var base64EncodedGif;
-
 	function share() {
 		app.navigate( "#share" );
 		$( app.pane.loader.element ).find( "h1" ).text( "Uploading..." );
