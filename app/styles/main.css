@@ -78,6 +78,9 @@ input {
 #share-results-container a {
 	width: 100%;
 }
+#share-results-container button {
+	text-align: left;
+}
 
 .font-awesome .km-icon::after,
 .font-awesome .km-icon::before {

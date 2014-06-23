@@ -65,18 +65,18 @@
 
 <div data-role="view" id="share" data-layout="main-layout" data-model="models.share">
 	<div id="share-results-container">
-		<p>Your image was uploaded successfully!.</p>
+		<p>Your image was uploaded successfully!</p>
 		<p>
 			<input data-bind="value: url">
 		</p>
 		<p>
-			<a data-role="button" data-icon="action" data-bind="click: events.view">View</a>
+			<button data-role="button" data-icon="action" data-bind="click: view">View</button>
 		</p>
 		<!--<p>
 			<a data-role="button" data-icon="share" data-bind="click: events.share, visible: support.sharing">Share</a>
 		</p>-->
 		<p>
-			<a href="#build" id="build-another" data-role="button" data-icon="refresh">Again!</a>
+			<a href="#build" data-role="button" data-icon="refresh">Again!</a>
 		</p>
 	</div>
 </div>

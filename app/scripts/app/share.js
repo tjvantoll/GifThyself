@@ -2,10 +2,8 @@
 	"use strict";
 
 	window.models.share = kendo.observable({
-		url: "???",
-		view: function( event ) {
-			event.preventDefault();
-			window.open( $( this ).attr( "href" ), "_blank" );
+		view: function() {
+			window.open( this.get( "url" ), "_blank" );
 		}
 	});
 
