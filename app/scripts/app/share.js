@@ -2,6 +2,15 @@
 	"use strict";
 
 	window.models.share = kendo.observable({
+		share: function() {
+			// http://plugins.telerik.com/plugin/socialsharing
+			window.plugins.socialsharing.share(
+				null, /* message */
+				null, /* subject */
+				null, /* file */
+				this.get( "url" )
+			);
+		},
 		view: function() {
 			window.open( this.get( "url" ), "_blank" );
 		}
