@@ -17,7 +17,7 @@
 				image = $( "<img>" ),
 				imageContainer = $( "<div>" );
 
-			image.attr( "src", "data:image/jpeg;base64," + data);
+			image.attr( "src", "data:image/jpeg;base64," + data );
 			canvas = renderImageInCanvas( image[ 0 ] );
 
 			imageContainer.append( canvas, image, $( "<button><span>X</span></button>" ) );
