@@ -25,7 +25,9 @@
 		}, function( message ) {
 			alert( "Image add failed: " + message );
 		}, {
-			destinationType: Camera.DestinationType.DATA_URL
+			destinationType: Camera.DestinationType.DATA_URL,
+			targetWidth: 300,
+			targetHeight: 200
 		});
 	};
 

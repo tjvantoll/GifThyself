@@ -20,11 +20,10 @@
 	window.el = new Everlive( "oFGC6drHAMPPmAwG" );
 	window.renderImageInCanvas = function( image, canvas ) {
 		var mpImg = new MegaPixImage( image ),
-			canvas = canvas || document.createElement( "canvas" ),
-			iOS = window.app.os.ios;
+			canvas = canvas || document.createElement( "canvas" );
 
 		// See http://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios
-		mpImg.render(canvas, { maxWidth: 350, maxHeight: 350, orientation: ( iOS ? 6 : 1 ) });
+		mpImg.render( canvas, { maxWidth: 350, maxHeight: 350 });
 		return canvas;
 	};
 	window.models = {};
