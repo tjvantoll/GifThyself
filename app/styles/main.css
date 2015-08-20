@@ -1,6 +1,10 @@
-.km-flat .km-button {
+.km-nova .km-button {
 	font-size: 1.2em;
 	width: 100%;
+}
+.km-nova p {
+	margin: 1rem;
+	font-size: 1em;
 }
 .halves .km-button {
 	width: 48%;
@@ -78,7 +82,7 @@ input {
 #share-results-container a {
 	width: 100%;
 }
-#share-results-container button {
+#share-results-container .km-button {
 	text-align: left;
 }
 

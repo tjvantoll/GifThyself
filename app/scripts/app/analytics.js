@@ -1,4 +1,5 @@
 (function(g) {
+  var productId = "7c3fff82d9b447408e6632c970233ce8"; // App unique product key
   // Make analytics available via the window.analytics variable
   // Start analytics by calling window.analytics.Start()
   var analytics = g.analytics = g.analytics || {};
@@ -8,9 +9,7 @@
     var factory = window.plugins.EqatecAnalytics.Factory;
     var monitor = window.plugins.EqatecAnalytics.Monitor;
     // Create the monitor instance using the unique product key for GifThyself Analytics
-    var productId = "7c3fff82d9b447408e6632c970233ce8";
-    var version = "1.2.3";
-    var settings = factory.CreateSettings(productId, version);
+    var settings = factory.CreateSettings(productId);
     settings.LoggingInterface = factory.CreateTraceLogger();
     factory.CreateMonitorWithSettings(settings,
       function() {

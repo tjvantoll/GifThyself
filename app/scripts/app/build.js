@@ -11,7 +11,10 @@
 	};
 
 	function getPicture() {
-		analytics.Monitor().TrackFeature( "Image.Add" );
+		if (!navigator.simulator) {
+			analytics.Monitor().TrackFeature( "Image.Add" );
+		}
+
 		navigator.camera.getPicture(function( data ) {
 			var canvas,
 				image = $( "<img>" ),
