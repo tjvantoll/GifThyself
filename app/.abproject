@@ -2,7 +2,7 @@
 	"ProjectName": "GifThyself",
 	"ProjectGuid": "{8e0ad2a8-5c7e-4f62-88bb-e83bd6e82e72}",
 	"projectVersion": 1,
-	"AppIdentifier": "com.telerik.gifthyself",
+	"AppIdentifier": "com.tjvantoll.gifthyself",
 	"DisplayName": "GifThyself",
 	"Author": "",
 	"Description": "Build and share animated gifs using your device's built in camera",
