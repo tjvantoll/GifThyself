@@ -17,7 +17,7 @@
 		return true;
 	});*/
 
-	window.el = new Everlive( "oFGC6drHAMPPmAwG" );
+	window.el = new Everlive( "vpaloksh6v11afyd" );
 	window.renderImageInCanvas = function( image, canvas ) {
 		var mpImg = new MegaPixImage( image ),
 			canvas = canvas || document.createElement( "canvas" );
